@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const logger = require('morgan');
+const cors = require('cors');
 
 const trackRouter = require('./controllers/tracks.js');
 
@@ -15,6 +16,7 @@ mongoose.connection.on('connected', () => {
 
 app.use(express.json());
 app.use(logger('dev'));
+app.use(cors(({ origin:'http://localhost:5173'})));
 
 
 
