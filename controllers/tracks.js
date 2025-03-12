@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
 });
 
 
-// READ - GET - /pets
+// READ - GET - /tracks
 router.get('/', async (req, res) => {
     try {
         const foundTracks = await Track.find();
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
       }
   });
 
-  // READ - GET - /pets/:petId
+  // READ - GET - /tracks/:trackId
 router.get('/:trackId', async (req, res) => {
     try {
       const foundTrack = await Track.findById(req.params.trackId);
@@ -63,7 +63,7 @@ router.get('/:trackId', async (req, res) => {
 
 
 
-// DELETE - DELETE - /pets/:petId
+// DELETE - DELETE - /tracks/:trackId
 router.delete('/:trackId', async (req, res) => {
     try {
       const deleteTrack = await Track.findByIdAndDelete(req.params.trackId);
